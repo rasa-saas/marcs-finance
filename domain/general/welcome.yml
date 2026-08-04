@@ -22,24 +22,24 @@ slots:
       - type: controlled
   agent_name:
     type: text
-    initial_value: "Finley"
+    initial_value: "Grwaith"
     mappings:
       - type: controlled
 
 responses:
   utter_greeting:
-    - text: "Hi there! I'm {agent_name} 👋. I can help you with {skills_summary}. \n Here's a few things you can ask me: {example_questions} \n How can I help you today? You look great by the way <3"
+    - text: "I'm an AI support agent called {agent_name}. I can help you with {skills_summary}. \n Here's a few things you can ask me: {example_questions} \n How can I help you today?"
       metadata:
         rephrase: True
-    - text: "Hi there! I'm {agent_name}. I can help you with things like transferring money, checking your balance, and answering your finance questions. What would you like to do?"
+    - text: "I'm an AI support agent called {agent_name}. I can help you with things like transferring money, checking your balance, and answering your finance questions. What would you like to do?"
       metadata:
         rephrase: True
       channel: "browser_audio"
   utter_hello:
-    - text: "Hi nice to meet you - I'm here to help with your {bank_name} account. How can I assist you?"
+    - text: "I'm an AI support agent called {agent_name}, here to help with your {bank_name} account. How can I assist you?"
       metadata:
         rephrase: True
-    - text: "Hi! I'm here to help with your {bank_name} account. What can I help you with?"
+    - text: "I'm {agent_name}, here to help with your {bank_name} account. What can I help you with?"
       metadata:
         rephrase: True
       channel: "browser_audio"
