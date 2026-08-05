@@ -9,6 +9,7 @@ This folder holds files that define your agent’s skills using "flows". [1](htt
 - **contacts/**: Contact management flows (add, list, remove trusted contacts)
 - **transfers/**: Money transfer flows (account-to-account, third-party payments)
 - **general/**: General banking conversations (greetings, help, support)
+- **fishing/**: Fishing tips flow (Reel shares old fishing wisdom on request)
 
 **Edit YAML files in this folder** to add new banking features, modify existing flows, or adjust what the agent asks customers.
 

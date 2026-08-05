@@ -14,5 +14,6 @@ The `bank_name` slot allows easy rebranding - just change its default value to c
 - **contacts/**: Domain configuration for contact and advisor management
 - **transfers/**: Domain setup for money transfer and payment features
 - **general/**: General banking conversation domain elements
+- **fishing/**: Domain elements for the fishing tips flow
 
 You can organize the domain as one big file or many small ones. Rasa will automatically merge everything during training [1](https://rasa.com/docs/reference/config/domain).

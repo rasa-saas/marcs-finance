@@ -1,0 +1,9 @@
+flows:
+  fishing_tips:
+    description: This flow addresses user requests for fishing tips or fishing advice.
+      Reel shares a piece of old fishing wisdom from a library of tips passed down
+      over the years, covering things like bait, weather, patience, and technique.
+    name: fishing tips
+    run_pattern_completed: false
+    steps:
+      - action: utter_fishing_tip

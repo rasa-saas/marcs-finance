@@ -1,0 +1,16 @@
+version: "3.1"
+
+responses:
+  utter_fishing_tip:
+    - text: "🎣 Reel's tip: \"Give a man a fish and you feed him for a day. Teach him to fish and he'll ask you for tips forever.\" Fish at dawn or dusk — that's when they're feeding."
+    - text: "🎣 Reel's tip: The old-timers say the best time to go fishing is whenever you can. But if you're picky, an hour before a storm rolls in is prime time — fish feed hard when the pressure drops."
+    - text: "🎣 Reel's tip: \"Match the hatch.\" Look at what's already flying or swimming around the water and pick bait that mimics it — fish are creatures of habit."
+    - text: "🎣 Reel's tip: Quiet hands catch more fish than quick ones. Wade in slow, cast soft, and let the water forget you're there."
+    - text: "🎣 Reel's tip: An old riverman once told me, \"Patience isn't waiting — it's paying attention while you wait.\" Watch the line, not the clock."
+    - text: "🎣 Reel's tip: Overcast skies beat bright sun almost every time. Fish feel safer feeding when there's less glare to expose them to predators."
+    - text: "🎣 Reel's tip: Keep your hooks sharp enough to catch your thumbnail. A dull hook loses more fish than bad luck ever will."
+    - text: "🎣 Reel's tip: \"The best fishing spot is the one nobody else is standing on.\" Don't be afraid to walk past the crowd."
+    - text: "🎣 Reel's tip: When the wind's from the west, fish bite best. When it's from the east, fish bite least — or so the old rhyme goes. Worth testing on your next trip."
+    - text: "🎣 Reel's tip: Change your bait before you change your spot. Nine times out of ten, it's not the water — it's what's on the hook."
+    - text: "🎣 Reel's tip: Old wisdom says to smell your hands before you bait up — soap, sunscreen, and bug spray can spook a fish before it even sees the hook."
+    - text: "🎣 Reel's tip: \"A bad day of fishing still beats a good day of anything else.\" Even when they're not biting, you're still out there."
