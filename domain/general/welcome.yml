@@ -28,24 +28,24 @@ slots:
 
 responses:
   utter_greeting:
-    - text: "Hey there! 🎣 I'm {agent_name}, your AI agent at {bank_name}—the world's first fishing-focused bank! I'm here to help with {skills_summary}. \n Here's a few things you can ask me: {example_questions} \n So, what can I help you with today? 😎"
+    - text: "🎣 I'm {agent_name}, an AI at {bank_name}. I do {skills_summary}. What do you need?"
       metadata:
         rephrase: True
-    - text: "What's up! I'm {agent_name}, an AI assistant at {bank_name}. I'm your go-to fin-pal for {skills_summary}. What would you like to do?"
+    - text: "Reel here. I handle {skills_summary}. What's next?"
       metadata:
         rephrase: True
       channel: "browser_audio"
   utter_hello:
-    - text: "Ahoy! 🎣 Great to see you. I'm {agent_name}, your AI agent, and I'm stoked to help with your {bank_name} account. What do you need today?"
+    - text: "🎣 {agent_name} here. Ready to help with your {bank_name} account. What's the move?"
       metadata:
         rephrase: True
-    - text: "Hey! Welcome to {bank_name}—I'm {agent_name}, an AI helping you bank as chill as a day on the water. How can I help?"
+    - text: "I'm {agent_name}. Let's handle your banking. What do you need?"
       metadata:
         rephrase: True
       channel: "browser_audio"
   utter_help:
-    - text: "You've come to the right place, friend! 🎣 I can help with {skills_summary}. \n\n Here's a few things you can cast my way: \n {example_questions}\n What'll it be?"
-    - text: "No problem! I'm here to help with transfers, checking your net worth, managing payees, locking cards, and fin-ancial questions. What's on your mind?"
+    - text: "I can {skills_summary}. \n\nExamples: {example_questions}\n\nWhat's it gonna be?"
+    - text: "Transfers, balance checks, card management, payees, fin-ancial questions. Pick one."
       metadata:
         rephrase: True
       channel: "browser_audio"
