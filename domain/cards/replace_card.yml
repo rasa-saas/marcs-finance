@@ -20,6 +20,11 @@ slots:
 responses:
   utter_ask_confirm_correct_card:
     - text: I've found the card with number ****3452 on file. Is this the card you want to replace?
+      buttons:
+        - title: "Yes"
+          payload: /SetSlots(confirm_correct_card=true)
+        - title: "No"
+          payload: /SetSlots(confirm_correct_card=false)
   utter_relevant_card_not_linked:
     - text: Seems like I don't have the card you're asking about on file.
   utter_ask_replacement_reason:
@@ -33,6 +38,11 @@ responses:
       channel: "browser_audio"
   utter_ask_was_card_used_fraudulently:
     - text: Is it possible that someone else has managed to use your card?
+      buttons:
+        - title: "Yes"
+          payload: /SetSlots(was_card_used_fraudulently=true)
+        - title: "No"
+          payload: /SetSlots(was_card_used_fraudulently=false)
   utter_will_cancel_and_send_new:
     - text: Alright, I'll cancel your card and send you a new one.
   utter_new_card_has_been_ordered:
