@@ -19,7 +19,7 @@ responses:
       buttons:
         - payload: "/SetSlots(confirmation=true)"
           title: "Yes"
-        - payload: "/SetSlots(confirmation=true)"
+        - payload: "/SetSlots(confirmation=false)"
           title: "No, cancel"
     - text: Do you want to add {add_contact_name}({add_contact_handle}) to your contacts?
       channel: "browser_audio"
