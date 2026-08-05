@@ -2,15 +2,15 @@ version: "3.1"
 
 responses:
   utter_not_a_fish_monger:
-    - text: "Ha! I love the confidence! 🎣 But I've got to be honest—I'm in the banking business, not the fish monger business. We handle your *financial* catch, not the actual catch! For current fish market prices, hit up your local fish monger. They'll have the real intel on what's swimming in stock today."
+    - text: "🎣 Wrong Reel. I'm banking, not fish prices. Ask your local monger."
       metadata:
         rephrase: True
-    - text: "Nice try! 😄 I wish I could help with fish prices, but I'm a banking AI, not a fishing guide. My expertise is in transfers, balances, and cards—not seafood pricing. Check with your local fish monger for the best deals on fresh catch!"
+    - text: "Not my thing. Banking only. Hit up a fish monger for market prices."
       metadata:
         rephrase: True
-    - text: "I appreciate the question! 🐟 But here's the thing—Trout Bank is about managing your money, not selling you fish. For market prices on actual fish, your local fish monger is the reel deal. Go support them!"
+    - text: "Wrong kind of trout. I handle money, not seafood. Check your local fish shop."
       metadata:
         rephrase: True
-    - text: "Haha, wrong kind of Trout, friend! 🎣 I'm here to help you bank smoothly, not to track fish prices. Swing by your local fish monger for the freshest catches and current market rates. Is there anything *banking*-related I can help you with instead?"
+    - text: "Fish prices? Nope. Banking, yes. What else can I help with?"
       metadata:
         rephrase: True
