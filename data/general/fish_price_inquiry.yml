@@ -1,0 +1,12 @@
+flows:
+  fish_price_inquiry:
+    description: |
+      Handles inquiries about fish market prices. The agent acknowledges the
+      confusion in a fun, on-brand way and politely redirects customers to their
+      local fish monger. This flow embraces the Trout Bank's fishing theme while
+      making it clear we're a bank, not a fish market.
+    name: fish_price_inquiry
+    triggers:
+      - intent: ask_about_fish_prices
+    steps:
+      - action: utter_not_a_fish_monger
