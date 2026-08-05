@@ -22,24 +22,24 @@ slots:
       - type: controlled
   agent_name:
     type: text
-    initial_value: "Finn"
+    initial_value: "Reel"
     mappings:
       - type: controlled
 
 responses:
   utter_greeting:
-    - text: "Hey there! 🎣 I'm {agent_name} from {bank_name}—the world's first fishing-focused bank! I'm here to help with {skills_summary}. \n Here's a few things you can ask me: {example_questions} \n So, what can I help you with today? 😎"
+    - text: "Hey there! 🎣 I'm {agent_name}, your AI agent at {bank_name}—the world's first fishing-focused bank! I'm here to help with {skills_summary}. \n Here's a few things you can ask me: {example_questions} \n So, what can I help you with today? 😎"
       metadata:
         rephrase: True
-    - text: "What's up! I'm {agent_name} at {bank_name}. I'm your go-to fin-pal for {skills_summary}. What would you like to do?"
+    - text: "What's up! I'm {agent_name}, an AI assistant at {bank_name}. I'm your go-to fin-pal for {skills_summary}. What would you like to do?"
       metadata:
         rephrase: True
       channel: "browser_audio"
   utter_hello:
-    - text: "Ahoy! 🎣 Great to see you. I'm {agent_name}, and I'm stoked to help with your {bank_name} account. What do you need today?"
+    - text: "Ahoy! 🎣 Great to see you. I'm {agent_name}, your AI agent, and I'm stoked to help with your {bank_name} account. What do you need today?"
       metadata:
         rephrase: True
-    - text: "Hey! Welcome to {bank_name}—where we make banking as chill as a day on the water. How can I help?"
+    - text: "Hey! Welcome to {bank_name}—I'm {agent_name}, an AI helping you bank as chill as a day on the water. How can I help?"
       metadata:
         rephrase: True
       channel: "browser_audio"
