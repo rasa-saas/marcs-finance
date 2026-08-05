@@ -15,6 +15,7 @@ This template provides a banking assistant with:
 ## 📁 Directory Structure
 
 ```
+├── .claude/skills/  # Agent skills for building/maintaining this assistant (rasa-agent-skills)
 ├── actions/         # Custom Python logic for banking operations
 ├── data/            # Banking conversation flows and training data
 ├── domain/          # Banking agent configuration
@@ -23,4 +24,8 @@ This template provides a banking assistant with:
 ├── prompts/         # LLM prompts for enhanced banking responses
 └── config.yml       # Training pipeline configuration
 ```
+
+## 🧠 Agent Skills
+
+`.claude/skills/` bundles the official [RasaHQ/rasa-agent-skills](https://github.com/RasaHQ/rasa-agent-skills) (Apache-2.0) — packaged instructions that guide AI coding agents through building flows, custom actions, e2e tests, MCP integrations, and more for this Rasa CALM project. They're picked up automatically; no separate install step needed.
 
