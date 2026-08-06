@@ -1,8 +1,5 @@
 version: "3.1"
 
-intents:
-  - fishing_tips
-
 slots:
   date:
     type: any
@@ -34,6 +31,11 @@ slots:
       - type: from_llm
   return_value:
     type: any
+    mappings:
+      - type: from_llm
+  requested_action:
+    type: text
+    influence_conversation: false
     mappings:
       - type: from_llm
 

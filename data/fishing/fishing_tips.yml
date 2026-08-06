@@ -4,8 +4,7 @@ flows:
       Reel shares a piece of old fishing wisdom from a library of tips passed down
       over the years, covering things like bait, weather, patience, and technique.
     name: fishing tips
-    nlu_trigger:
-      - intent: fishing_tips
+    if: slots.requested_action == "fishing_tips"
     run_pattern_completed: false
     steps:
       - action: utter_fishing_tip
