@@ -25,13 +25,31 @@ slots:
     initial_value: "Reel"
     mappings:
       - type: controlled
+  requested_action:
+    type: text
+    mappings:
+      - type: from_llm
 
 responses:
   utter_greeting:
     - text: "🎣 I'm {agent_name}, an AI at {bank_name}. I do {skills_summary}. What do you need?"
+      buttons:
+        - payload: "/SetSlots(requested_action=banking_help)"
+          title: "Banking Help"
+        - payload: "/SetSlots(requested_action=fishing_tips)"
+          title: "Fishing Tips"
+        - payload: "/SetSlots(requested_action=other)"
+          title: "Something Else"
       metadata:
         rephrase: True
     - text: "Reel here. I handle {skills_summary}. What's next?"
+      buttons:
+        - payload: "/SetSlots(requested_action=banking_help)"
+          title: "Banking Help"
+        - payload: "/SetSlots(requested_action=fishing_tips)"
+          title: "Fishing Tips"
+        - payload: "/SetSlots(requested_action=other)"
+          title: "Something Else"
       metadata:
         rephrase: True
       channel: "browser_audio"
