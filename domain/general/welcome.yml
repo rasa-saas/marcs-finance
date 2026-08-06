@@ -34,21 +34,21 @@ responses:
   utter_greeting:
     - text: "🎣 I'm {agent_name}, an AI at {bank_name}. I do {skills_summary}. What do you need?"
       buttons:
-        - payload: "/help"
+        - payload: "/SetSlots(requested_action=banking_help)"
           title: "Banking Help"
-        - payload: "/fishing_tips"
+        - payload: "/SetSlots(requested_action=fishing_tips)"
           title: "Fishing Tips"
-        - payload: "/help"
+        - payload: "/SetSlots(requested_action=other)"
           title: "Something Else"
       metadata:
         rephrase: True
     - text: "Reel here. I handle {skills_summary}. What's next?"
       buttons:
-        - payload: "/help"
+        - payload: "/SetSlots(requested_action=banking_help)"
           title: "Banking Help"
-        - payload: "/fishing_tips"
+        - payload: "/SetSlots(requested_action=fishing_tips)"
           title: "Fishing Tips"
-        - payload: "/help"
+        - payload: "/SetSlots(requested_action=other)"
           title: "Something Else"
       metadata:
         rephrase: True
