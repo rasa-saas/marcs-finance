@@ -25,10 +25,6 @@ slots:
     initial_value: "Reel"
     mappings:
       - type: controlled
-  requested_action:
-    type: text
-    mappings:
-      - type: from_llm
 
 responses:
   utter_greeting:
