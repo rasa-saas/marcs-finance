@@ -33,6 +33,11 @@ slots:
     type: any
     mappings:
       - type: from_llm
+  requested_action:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_llm
 
 session_config:
   session_expiration_time: 60
