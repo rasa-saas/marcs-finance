@@ -1,0 +1,11 @@
+flows:
+  fish_price_inquiry:
+    description: |
+      Handles inquiries about fish market prices. The LLM recognizes when a user
+      is asking about fish prices (e.g. "how much is tuna?") and responds with a
+      playful, on-brand list of fish and their estimated average market prices.
+      This flow embraces the Trout Bank's fishing theme while making clear these
+      are ballpark estimates, not live market data.
+    name: fish_price_inquiry
+    steps:
+      - action: utter_fish_prices

@@ -1,0 +1,14 @@
+version: "3.1"
+
+responses:
+  utter_fish_prices:
+    - text: |
+        🎣 Reel's daily market board (est. average prices per lb, USD):
+        - Tuna: $12.00
+        - Salmon: $9.50
+        - Trout: $7.25
+        - Cod: $6.00
+        - Halibut: $14.00
+        - Mahi Mahi: $10.50
+
+        These are ballpark estimates—your local monger sets the real price.
