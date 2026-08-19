@@ -11,5 +11,7 @@ flows:
       - noop:
           next:
             - if: slots.requested_action == "fishing_tips"
-              then: fishing_tips
+              then: go_to_fishing_tips
             - else: END
+      - id: go_to_fishing_tips
+        link: fishing_tips
