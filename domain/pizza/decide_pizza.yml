@@ -1,0 +1,178 @@
+version: "3.1"
+
+actions:
+  - action_recommend_pizza
+
+slots:
+  pizza_dietary_preference:
+    type: categorical
+    values:
+      - meat
+      - vegetarian
+      - vegan
+    mappings:
+      - type: from_llm
+
+  pizza_vegan_topping_style:
+    type: categorical
+    values:
+      - roasted_vegetables
+      - vegan_cheese_and_herbs
+      - spicy_plant_based
+    mappings:
+      - type: from_llm
+
+  pizza_veggie_topping_style:
+    type: categorical
+    values:
+      - classic_margherita
+      - loaded_veggie
+      - cheese_lovers
+    mappings:
+      - type: from_llm
+
+  pizza_meat_topping_style:
+    type: categorical
+    values:
+      - pepperoni_classic
+      - meat_lovers
+      - bbq_chicken
+    mappings:
+      - type: from_llm
+
+  pizza_spice_level:
+    type: categorical
+    values:
+      - mild
+      - medium
+      - spicy
+    mappings:
+      - type: from_llm
+
+  pizza_crust_style:
+    type: categorical
+    values:
+      - thin
+      - deep_dish
+      - stuffed
+      - gluten_free
+    mappings:
+      - type: from_llm
+
+  pizza_party_size:
+    type: float
+    mappings:
+      - type: from_llm
+
+  pizza_wants_extra_topping:
+    type: bool
+    mappings:
+      - type: from_llm
+
+  pizza_extra_topping:
+    type: text
+    mappings:
+      - type: from_llm
+
+  recommended_pizza_name:
+    type: text
+    mappings:
+      - type: controlled
+
+  recommended_pizza_description:
+    type: text
+    mappings:
+      - type: controlled
+
+responses:
+  utter_ask_pizza_dietary_preference:
+    - text: "🍕 Let's find your perfect pizza! First up: are you thinking meat, vegetarian, or vegan?"
+      buttons:
+        - title: Meat
+          payload: "/SetSlots(pizza_dietary_preference=meat)"
+        - title: Vegetarian
+          payload: "/SetSlots(pizza_dietary_preference=vegetarian)"
+        - title: Vegan
+          payload: "/SetSlots(pizza_dietary_preference=vegan)"
+
+  utter_ask_pizza_vegan_topping_style:
+    - text: "Nice choice. Which vegan style sounds best: roasted vegetables, vegan cheese and herbs, or spicy plant-based?"
+      buttons:
+        - title: Roasted vegetables
+          payload: "/SetSlots(pizza_vegan_topping_style=roasted_vegetables)"
+        - title: Vegan cheese and herbs
+          payload: "/SetSlots(pizza_vegan_topping_style=vegan_cheese_and_herbs)"
+        - title: Spicy plant-based
+          payload: "/SetSlots(pizza_vegan_topping_style=spicy_plant_based)"
+
+  utter_ask_pizza_veggie_topping_style:
+    - text: "Great pick. Which vegetarian style sounds best: classic margherita, loaded veggie, or cheese lovers?"
+      buttons:
+        - title: Classic margherita
+          payload: "/SetSlots(pizza_veggie_topping_style=classic_margherita)"
+        - title: Loaded veggie
+          payload: "/SetSlots(pizza_veggie_topping_style=loaded_veggie)"
+        - title: Cheese lovers
+          payload: "/SetSlots(pizza_veggie_topping_style=cheese_lovers)"
+
+  utter_ask_pizza_meat_topping_style:
+    - text: "Solid choice. Which meat style sounds best: classic pepperoni, meat lovers, or bbq chicken?"
+      buttons:
+        - title: Classic pepperoni
+          payload: "/SetSlots(pizza_meat_topping_style=pepperoni_classic)"
+        - title: Meat lovers
+          payload: "/SetSlots(pizza_meat_topping_style=meat_lovers)"
+        - title: BBQ chicken
+          payload: "/SetSlots(pizza_meat_topping_style=bbq_chicken)"
+
+  utter_ask_pizza_spice_level:
+    - text: "How spicy do you want it: mild, medium, or spicy?"
+      buttons:
+        - title: Mild
+          payload: "/SetSlots(pizza_spice_level=mild)"
+        - title: Medium
+          payload: "/SetSlots(pizza_spice_level=medium)"
+        - title: Spicy
+          payload: "/SetSlots(pizza_spice_level=spicy)"
+
+  utter_ask_pizza_crust_style:
+    - text: "What about the crust: thin, deep dish, stuffed, or gluten-free?"
+      buttons:
+        - title: Thin
+          payload: "/SetSlots(pizza_crust_style=thin)"
+        - title: Deep dish
+          payload: "/SetSlots(pizza_crust_style=deep_dish)"
+        - title: Stuffed
+          payload: "/SetSlots(pizza_crust_style=stuffed)"
+        - title: Gluten-free
+          payload: "/SetSlots(pizza_crust_style=gluten_free)"
+
+  utter_ask_pizza_party_size:
+    - text: "Last thing — how many people are you feeding?"
+
+  utter_pizza_recommendation:
+    - text: >
+        🍕 Here's my pick: the {recommended_pizza_name}! {recommended_pizza_description}
+        That should be a great fit for {pizza_party_size} people. Want to add one
+        extra topping?
+      metadata:
+        rephrase: True
+
+  utter_ask_pizza_wants_extra_topping:
+    - text: "Want to add one extra topping to make it yours?"
+      buttons:
+        - title: "Yes, add a topping"
+          payload: "/SetSlots(pizza_wants_extra_topping=true)"
+        - title: "No, that's perfect"
+          payload: "/SetSlots(pizza_wants_extra_topping=false)"
+
+  utter_ask_pizza_extra_topping:
+    - text: "What topping would you like to add?"
+
+  utter_pizza_final_summary:
+    - text: >
+        🍕 Perfect — the {recommended_pizza_name} with extra {pizza_extra_topping},
+        feeding {pizza_party_size} people. That's your pizza! (Just so you know,
+        I can't actually place the order — this was just to help you decide.)
+      metadata:
+        rephrase: True

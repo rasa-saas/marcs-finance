@@ -1,0 +1,94 @@
+flows:
+  decide_pizza_order:
+    name: decide pizza order
+    description: >
+      Helps an undecided user figure out what kind of pizza to order, purely for fun.
+      Pizza is a round flatbread dish topped with sauce, cheese, and toppings, then
+      baked. Asks about dietary preference, preferred toppings, spice tolerance, crust
+      style, and how many people it needs to feed, then recommends a specific named
+      pizza. This is a lighthearted recommendation quiz — it does not place a real
+      order, process payment, or involve any food delivery service.
+    steps:
+      - id: ask_diet
+        collect: pizza_dietary_preference
+        description: >
+          Dietary category the user wants for their pizza: "meat", "vegetarian", or
+          "vegan".
+        next:
+          - if: slots.pizza_dietary_preference = "vegan"
+            then: ask_vegan_topping_style
+          - if: slots.pizza_dietary_preference = "vegetarian"
+            then: ask_veggie_topping_style
+          - else: ask_meat_topping_style
+
+      - id: ask_vegan_topping_style
+        collect: pizza_vegan_topping_style
+        description: >
+          Preferred vegan topping style: "roasted_vegetables" (roasted seasonal
+          vegetables), "vegan_cheese_and_herbs" (dairy-free cheese with fresh herbs),
+          or "spicy_plant_based" (plant-based spicy "meat" crumbles).
+        next: ask_spice_level
+
+      - id: ask_veggie_topping_style
+        collect: pizza_veggie_topping_style
+        description: >
+          Preferred vegetarian topping style: "classic_margherita" (tomato, basil,
+          mozzarella), "loaded_veggie" (a variety of vegetables), or "cheese_lovers"
+          (extra cheese, few or no vegetables).
+        next: ask_spice_level
+
+      - id: ask_meat_topping_style
+        collect: pizza_meat_topping_style
+        description: >
+          Preferred meat topping style: "pepperoni_classic" (pepperoni only),
+          "meat_lovers" (multiple meats), or "bbq_chicken" (chicken with bbq sauce).
+        next: ask_spice_level
+
+      - id: ask_spice_level
+        collect: pizza_spice_level
+        description: >
+          How spicy the user wants the pizza: "mild", "medium", or "spicy".
+        next: ask_crust
+
+      - id: ask_crust
+        collect: pizza_crust_style
+        description: >
+          Preferred crust style: "thin" (thin and crispy), "deep_dish" (thick,
+          Chicago-style), "stuffed" (cheese-stuffed crust), or "gluten_free".
+        next: ask_party_size
+
+      - id: ask_party_size
+        collect: pizza_party_size
+        description: >
+          Number of people the pizza needs to feed, as a whole number (e.g. 1, 2, 4,
+          8).
+        next: recommend
+
+      - id: recommend
+        action: action_recommend_pizza
+        next: show_recommendation
+
+      - id: show_recommendation
+        action: utter_pizza_recommendation
+        next: ask_extra_topping
+
+      - id: ask_extra_topping
+        collect: pizza_wants_extra_topping
+        description: >
+          Whether the user wants to add one extra custom topping to the recommended
+          pizza. True if they want to add something, false if they're happy as-is.
+        next:
+          - if: slots.pizza_wants_extra_topping
+            then: ask_extra_topping_name
+          - else: END
+
+      - id: ask_extra_topping_name
+        collect: pizza_extra_topping
+        description: >
+          Name of the single extra topping the user wants added, e.g. "extra cheese",
+          "jalapenos", "pineapple".
+        next: final_summary
+
+      - id: final_summary
+        action: utter_pizza_final_summary
+        next: END
