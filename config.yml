@@ -1,6 +1,6 @@
 recipe: default.v1
 language: en
-assistant_id: placeholder_default
+assistant_id: trout_bank
 pipeline:
 - name: SearchReadyLLMCommandGenerator
   llm:
