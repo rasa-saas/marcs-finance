@@ -33,7 +33,7 @@ slots:
 
 responses:
   utter_greeting:
-    - text: "🎣 I'm {agent_name}, an AI at {bank_name}. Today's catch of the day is {catch_of_the_day}. I do {skills_summary}. What do you need?"
+    - text: "Welcome to Rasa's Fin-ancial Bank — let's hook you up. 🎣 I'm {agent_name}. Today's catch of the day is {catch_of_the_day}. I do {skills_summary}. What do you need?"
       buttons:
         - payload: "/SetSlots(requested_action=banking_help)"
           title: "Banking Help"
@@ -42,8 +42,8 @@ responses:
         - payload: "/SetSlots(requested_action=other)"
           title: "Something Else"
       metadata:
-        rephrase: True
-    - text: "Reel here. Catch of the day is {catch_of_the_day}. I handle {skills_summary}. What's next?"
+        rephrase: False
+    - text: "Welcome to Rasa's Fin-ancial Bank — let's hook you up. Reel here. Catch of the day is {catch_of_the_day}. I handle {skills_summary}. What's next?"
       buttons:
         - payload: "/SetSlots(requested_action=banking_help)"
           title: "Banking Help"
@@ -52,7 +52,7 @@ responses:
         - payload: "/SetSlots(requested_action=other)"
           title: "Something Else"
       metadata:
-        rephrase: True
+        rephrase: False
       channel: "browser_audio"
   utter_hello:
     - text: "🎣 {agent_name} here. Ready to help with your {bank_name} account. What's the move?"
