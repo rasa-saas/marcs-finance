@@ -25,10 +25,15 @@ slots:
     initial_value: "Reel"
     mappings:
       - type: controlled
+  catch_of_the_day:
+    type: text
+    initial_value: "rainbow trout"
+    mappings:
+      - type: controlled
 
 responses:
   utter_greeting:
-    - text: "🎣 I'm {agent_name}, an AI at {bank_name}. I do {skills_summary}. What do you need?"
+    - text: "🎣 I'm {agent_name}, an AI at {bank_name}. Today's catch of the day is {catch_of_the_day}. I do {skills_summary}. What do you need?"
       buttons:
         - payload: "/SetSlots(requested_action=banking_help)"
           title: "Banking Help"
@@ -38,7 +43,7 @@ responses:
           title: "Something Else"
       metadata:
         rephrase: True
-    - text: "Reel here. I handle {skills_summary}. What's next?"
+    - text: "Reel here. Catch of the day is {catch_of_the_day}. I handle {skills_summary}. What's next?"
       buttons:
         - payload: "/SetSlots(requested_action=banking_help)"
           title: "Banking Help"
