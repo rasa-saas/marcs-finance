@@ -8,8 +8,10 @@ flows:
     run_pattern_completed: false
     steps:
       - action: utter_greeting
-      - noop:
-          next:
-            - if: slots.requested_action == "fishing_tips"
-              then: fishing_tips
-            - else: END
+      - noop: true
+        next:
+          - if: slots.requested_action == "fishing_tips"
+            then: goto_fishing_tips
+          - else: END
+      - id: goto_fishing_tips
+        link: fishing_tips
